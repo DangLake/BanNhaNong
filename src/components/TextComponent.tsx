@@ -1,6 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { View, Text, StyleProp, TextStyle } from 'react-native';
 import React from 'react';
 import { appColors } from '../constants/appColors';
+import { globalStyles } from '../styles/globalStyles';
+import { fontFamilies } from '../constants/fontFamilies';
 
 
 interface Props{
@@ -10,17 +13,24 @@ interface Props{
     flex?: number;
     font?:string;
     styles?: StyleProp<TextStyle>;
+    title?: boolean
 }
 const TextComponent = (props:Props) => {
-    const {text,size,flex,color,font,styles} = props;
+
+    const {text,size,flex,color,font,styles,title} = props;
   return (
     <Text style={[
+
+        globalStyles.text,
+
+        // eslint-disable-next-line react-native/no-inline-styles
         {
             color: color ?? appColors.text,
             flex:flex ?? 0,
-            fontSize: size ?? 14,
-            fontFamily: 'AirbnbCereal_W_Bd',
+            fontSize: size ?? title ? 24 : 14,
+            fontFamily: font ?? title ? fontFamilies.bold : fontFamilies.regular,
         },
+        styles,
     ]}>{text}</Text>
   );
 };
