@@ -1,4 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
+
 import { appInfors } from './../constants/appInfors';
 import { ImageBackground ,Image, ActivityIndicator} from 'react-native';
 import React from 'react';
