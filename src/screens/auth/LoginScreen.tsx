@@ -6,7 +6,7 @@ import { globalStyles } from '../../styles/globalStyles';
 const LoginScreen = () => {
   return (
     // eslint-disable-next-line react-native/no-inline-styles
-    <View   style={[globalStyles.container,{padding: 16}]}>
+    <View   style={[globalStyles.container,{padding: 16,backgroundColor: 'coral'}]}>
       <Text>LoginScreen</Text>
       <ButtonComponent text="LOGIN" onPress={() => console.log('Login')}
       icon={
